@@ -15,7 +15,7 @@ phases:
 
   post_build:
     commands:
-      - echo "Post-build phase started..."
+      - echo Configuring NGINX
 
 artifacts:
   files:
