@@ -4,21 +4,19 @@ phases:
   install:
     commands:
       - echo "Updating package lists..."
-      - apt update -y
+      - sudo apt update -y
       - echo "Installing Nginx..."
-      - apt install -y nginx
+      - sudo apt install -y nginx
 
   build:
     commands:
       - echo "Starting build phase..."
-      - mkdir -p /tmp/build-output
-      - cp index.html /tmp/build-output/
+      - cp index.html /var/www/html/
 
   post_build:
     commands:
-      - echo "Post-build phase completed."
+      - echo "Post-build phase started..."
 
 artifacts:
   files:
-    - index.html
-  base-directory: /tmp/build-output
+    - /var/www/html/index.html
