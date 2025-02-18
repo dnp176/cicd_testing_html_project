@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Updating package lists..."
+      - sudo apt update -y
+      - echo "Installing Nginx..."
+      - sudo apt install -y nginx-y
+
+  build:
+    commands:
+      - echo "Starting build phase..."
+      - cp index.html /var/www/html/
+
+  post_build:
+    commands:
+      - echo "Post-build phase started..."
+
+artifacts:
+  files:
+    - /var/www/html/index.html
